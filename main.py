@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 model_name = "gpt2"
 model = GPT2LMHeadModel.from_pretrained(model_name)
