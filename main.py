@@ -17,7 +17,7 @@ def generate_text():
         output = model.generate(input_ids, max_length=100, num_return_sequences=1, no_repeat_ngram_size=2)
 
         generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
-        return jsonify({"generated_text": generated_text})
+        return generated_text
     else:
         return jsonify({"error": "Please provide a 'prompt' parameter in the URL."})
 
